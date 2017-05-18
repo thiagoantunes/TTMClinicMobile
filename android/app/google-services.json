@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "65238345155",
+    "firebase_url": "https://ttmclinic-d86fa.firebaseio.com",
+    "project_id": "ttmclinic-d86fa",
+    "storage_bucket": "ttmclinic-d86fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65238345155:android:8018b55781e579e2",
+        "android_client_info": {
+          "package_name": "com.ttmclinicmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65238345155-83rl6p3hcpnfesn6a32ptftq0oab59g0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBm6L0XwzXFEK9U45PMwgJb3LIsA6Ftso"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
