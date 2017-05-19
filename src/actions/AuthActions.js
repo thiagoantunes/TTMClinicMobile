@@ -1,12 +1,13 @@
-import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import {
   EMAIL_CHANGED,
   PASSWORD_CHANGED,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAIL,
-  LOGIN_USER
+  LOGIN_USER,
+  USER_NOT_LOGGED_IN
 } from './types';
+import firebase from '../firebase';
 
 export const emailChanged = (text) => {
   return {
@@ -29,6 +30,20 @@ export const loginUser = ({ email, password }) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(user => loginUserSuccess(dispatch, user))
       .catch(() => loginUserFail(dispatch));
+  };
+};
+
+export const checkLoginStatus = () => {
+  return (dispatch) => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        loginUserSuccess(dispatch, user);
+      } else {
+        dispatch({
+          type: USER_NOT_LOGGED_IN
+        });
+      }
+    });
   };
 };
 

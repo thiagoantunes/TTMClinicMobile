@@ -1,9 +1,9 @@
-import firebase from 'firebase';
 import {
   CLINIC_FETCH_SUCCESS,
   CATEGORIES_FETCH_SUCCESS,
   CATEGORY_SELECTED
 } from './types';
+import firebase from '../firebase';
 
 export const clinicFetch = () => {
   const { currentUser } = firebase.auth();
