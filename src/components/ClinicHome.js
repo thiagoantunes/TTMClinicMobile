@@ -1,11 +1,22 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ListView, Text } from 'react-native';
-import { clinicFetch, categoriesFetch, categorySelected } from '../actions';
-import ListCategoryItem from './ListCategoryItem';
-import ListItemCategoryItem from './ListItemCategoryItem';
-import { Card, CardSection } from './common';
+import { 
+  ListView, 
+  Text, 
+  View, 
+  TouchableWithoutFeedback, 
+  StatusBar, 
+  ScrollView } from 'react-native';
+import CachedImage from 'react-native-cached-image';
+import Carousel from 'react-native-snap-carousel';
+import { clinicFetch, categoriesFetch, categorySelected, logOut } from '../actions';
+import { Button } from './common';
+
+
+import { sliderWidth, itemWidth } from '../styles/SliderEntry.style';
+import SliderEntry from './common/SliderEntry';
+import styles from '../styles/index.style';
 
 class ClinicHome extends Component {
   componentWillMount() {
@@ -13,7 +24,6 @@ class ClinicHome extends Component {
     this.props.clinicFetch();
 
     this.createCategoriesDataSource(this.props);
-    this.createCategoryItemsDataSource(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,7 +36,52 @@ class ClinicHome extends Component {
     }
 
     this.createCategoriesDataSource(nextProps);
-    this.createCategoryItemsDataSource(nextProps);
+  }
+
+  onButtonPress() {
+    this.props.logOut();
+  }
+
+  onCategoryPress(item) {
+    this.props.categorySelected(item.uid);
+  }
+
+  getSlides() {
+    const cat = _.find(this.props.categories, { uid: this.props.selectedCategory });
+    if (!cat || !cat.items) {
+      return false;
+    }
+
+    return _.map(cat.items, (entry, index) => {
+      const mappedEntry = { ...entry, illustration: entry.cover.src, subtitle: entry.subtitle };
+      return (
+        <SliderEntry
+          key={`carousel-entry-${index}`}
+          even={(index + 1) % 2 === 0}
+          {...mappedEntry}
+        />
+      );
+    });
+  }
+
+  get example1() {
+    return (
+      <Carousel
+        sliderWidth={sliderWidth}
+        itemWidth={itemWidth}
+        firstItem={1}
+        inactiveSlideScale={0.94}
+        inactiveSlideOpacity={0.6}
+        enableMomentum={false}
+        containerCustomStyle={styles.slider}
+        contentContainerCustomStyle={styles.sliderContainer}
+        showsHorizontalScrollIndicator={false}
+        snapOnAndroid
+        removeClippedSubviews={false}
+      >
+        {this.getSlides()}
+      </Carousel>
+    );
   }
 
   createCategoriesDataSource({ categories }) {
@@ -37,57 +92,92 @@ class ClinicHome extends Component {
     this.categoriesDataSource = ds.cloneWithRows(categories);
   }
 
-  createCategoryItemsDataSource({ categories, selectedCategory }) {
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
-    const cat = _.find(categories, { uid: selectedCategory });
-
-    this.categoryItemsDataSource = ds.cloneWithRows(_.isEmpty(cat) ? {} : cat.items);
+  renderCategoriesRow(item) {
+    return (
+      <TouchableWithoutFeedback onPress={this.onCategoryPress.bind(this, item)} >
+        <View style={{ paddingRight: 12 }}>
+          <Text style={{ color: this.props.info.fontcolor, fontSize: 12 }}>
+            {item.name ? item.name.toUpperCase() : ''}
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+    );
   }
 
-  renderCategoriesRow(categorie) {
-    return <ListCategoryItem employee={categorie} />;
-  }
-
-  renderCategoryItemsRow(item) {
-    return <ListItemCategoryItem employee={item} />;
+  renderLogo() {
+    if (!_.isEmpty(this.props.info.logo)) {
+      return (
+        <CachedImage
+          source={{
+            uri: this.props.info.logo.src
+          }}
+          style={styles.logo}
+        />
+      );
+    }
   }
 
   render() {
     return (
-      
-      <Card>
-        <Text>
-          {this.props.info.name}
-        </Text>
 
-        <Text>
-          {this.props.info.crm}
-        </Text>
+      <View style={{ backgroundColor: this.props.info.bgcolor, flex: 1, justifyContent: 'center' }}>
+        <StatusBar
+          translucent
+          backgroundColor={'rgba(0, 0, 0, 0.3)'}
+        />
 
-        <Text>
-          {this.props.info.description}
-        </Text>
+        <View style={styles.header}>
+
+          <View style={styles.headerInfo}>
+
+            <Text style={{ color: this.props.info.fontcolor, fontSize: 32, marginBottom: 40, fontFamily: 'MavenProRegular' }}>
+              {this.props.info.name}
+            </Text>
+
+            <Text style={{ color: this.props.info.fontcolor, fontSize: 16, marginBottom: 8, fontFamily: 'OpenSans' }}>
+              {this.props.info.description}
+            </Text>
+
+            <Text style={{ color: this.props.info.fontcolor, fontSize: 16, fontFamily: 'OpenSans' }}>
+              {this.props.info.crm ? this.props.info.crm.toUpperCase() : ''}
+            </Text>
+
+          </View>
+
+          <View style={styles.headerLogo}>
+            {this.renderLogo()}
+          </View>
+
+        </View>
 
 
-        <CardSection>
-          <ListView
-            enableEmptySections
-            dataSource={this.categoriesDataSource}
-            renderRow={this.renderCategoriesRow}
-          />
-        </CardSection>
+        <View style={{ flex: 2.5 }}>
+          <View style={{ paddingLeft: 96, height: 50 }}>
+            <ListView
+              horizontal
+              style={{ flex: 1 }}
+              enableEmptySections
+              dataSource={this.categoriesDataSource}
+              renderRow={this.renderCategoriesRow.bind(this)}
+            />
+          </View>
+          <View style={{ flex: 1 }}>
+            <ScrollView
+              style={styles.scrollview}
+              indicatorStyle={'white'}
+              scrollEventThrottle={200}
+            >
+              {this.example1}
+            </ScrollView>
+          </View>
+        </View>
+        <View style={{ height: 50 }}>
+          <Button onPress={this.onButtonPress.bind(this)}>
+            Logout
+        </Button>
+        </View>
 
-        <CardSection>
-          <ListView
-            enableEmptySections
-            dataSource={this.categoryItemsDataSource}
-            renderRow={this.renderCategoryItemsRow}
-          />
-        </CardSection>
-
-      </Card>
+      </View>
     );
   }
 }
@@ -108,8 +198,9 @@ const mapStateToProps = state => {
   return { info, categories, selectedCategory };
 };
 
-export default connect(mapStateToProps, { 
-  clinicFetch, 
-  categoriesFetch, 
-  categorySelected 
+export default connect(mapStateToProps, {
+  clinicFetch,
+  categoriesFetch,
+  categorySelected,
+  logOut
 })(ClinicHome);

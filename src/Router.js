@@ -1,29 +1,73 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
 import { Scene, Router } from 'react-native-router-flux';
+import { connect } from 'react-redux';
 import LoginForm from './components/LoginForm';
 import ItemCategory from './components/ItemCategory';
-
 import ClinicHome from './components/ClinicHome';
+import { checkLoginStatus } from './actions';
+import firebase from './firebase';
 
-const RouterComponent = () => {
-  return (
-    <Router sceneStyle={{ paddingTop: 65 }}>
-      <Scene key="auth">
-        <Scene key="login" component={LoginForm} />
-      </Scene>
+class RouterComponent extends Component {
 
-      <Scene key="main">
-        <Scene
-          //onRight={() => Actions.employeeCreate()}
-          //rightTitle="Add"
-          key="clinicHome"
-          component={ClinicHome}
-          initial
-        />
-        <Scene key="itemCategory" component={ItemCategory} title="Item" />
-      </Scene>
-    </Router>
-  );
-};
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      logged: false,
+      loading: true,
+    };
+  }
 
-export default RouterComponent;
+  componentWillMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          logged: true,
+          loading: false,
+        });
+      } else {
+        this.setState({
+          loading: false,
+        });
+      }
+    });
+  }
+
+  render() {
+    if (this.state.loading) {
+      return <View><Text>Loading...</Text></View>;
+    }
+    return (
+      <Router>
+        <Scene key="auth" initial={!this.state.logged}>
+          <Scene
+            key="login"
+            sceneStyle={{ paddingTop: 65 }}
+            hideNavBar={false} title={'Login'}
+            component={LoginForm}
+          />
+        </Scene>
+
+        <Scene key="main" initial={this.state.logged}>
+          <Scene
+            //onRight={() => Actions.employeeCreate()}
+            //rightTitle="Add"
+            panHandlers={null}
+            hideNavBar
+            key="clinicHome"
+            component={ClinicHome}
+            initial
+          />
+          <Scene 
+            panHandlers={null}
+            key="itemCategory" 
+            hideNavBar 
+            component={ItemCategory} 
+          />
+        </Scene>
+      </Router>
+    );
+  }
+}
+
+export default connect(null, { checkLoginStatus })(RouterComponent);

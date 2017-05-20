@@ -33,6 +33,15 @@ export const loginUser = ({ email, password }) => {
   };
 };
 
+export const logOut = () => {
+  return (dispatch) => {
+    dispatch({ type: LOGIN_USER });
+
+    firebase.auth().signOut()
+      .then(() => logUserOut(dispatch));
+  };
+};
+
 export const checkLoginStatus = () => {
   return (dispatch) => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -58,4 +67,12 @@ const loginUserSuccess = (dispatch, user) => {
   });
 
   Actions.main();
+};
+
+const logUserOut = (dispatch) => {
+  dispatch({
+    type: USER_NOT_LOGGED_IN
+  });
+
+  Actions.auth();
 };
