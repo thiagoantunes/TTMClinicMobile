@@ -1,87 +1,56 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { 
-  ListView, 
-  Text, 
-  View, 
-  TouchableWithoutFeedback, 
-  StatusBar, 
-  ScrollView } from 'react-native';
+import {
+  ListView,
+  Text,
+  View,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  StatusBar,
+  Animated
+} from 'react-native';
 import CachedImage from 'react-native-cached-image';
-import Carousel from 'react-native-snap-carousel';
+import { Actions } from 'react-native-router-flux';
 import { clinicFetch, categoriesFetch, categorySelected, logOut } from '../actions';
-import { Button } from './common';
 
 
-import { sliderWidth, itemWidth } from '../styles/SliderEntry.style';
 import SliderEntry from './common/SliderEntry';
 import styles from '../styles/index.style';
 
 class ClinicHome extends Component {
+
+  state = { pressAction: new Animated.Value(0), logOutTimeout: 0 };
+
   componentWillMount() {
     this.props.categoriesFetch();
     this.props.clinicFetch();
 
     this.createCategoriesDataSource(this.props);
+    this.createCategoryItemsDataSource(this.props);
+
+    this.state.pressAction.addListener((v) => this.setState({ logOutTimeout: v.value }));
   }
 
   componentWillReceiveProps(nextProps) {
-    // nextProps are the next set of props that this component
-    // will be rendered with
-    // this.props is still the old set of props
-
     if (_.isEmpty(nextProps.selectedCategory) && nextProps.categories.length > 0) {
       this.props.categorySelected(nextProps.categories[0].uid);
     }
 
     this.createCategoriesDataSource(nextProps);
-  }
-
-  onButtonPress() {
-    this.props.logOut();
+    this.createCategoryItemsDataSource(nextProps);
   }
 
   onCategoryPress(item) {
     this.props.categorySelected(item.uid);
   }
 
-  getSlides() {
-    const cat = _.find(this.props.categories, { uid: this.props.selectedCategory });
-    if (!cat || !cat.items) {
-      return false;
-    }
-
-    return _.map(cat.items, (entry, index) => {
-      const mappedEntry = { ...entry, illustration: entry.cover.src, subtitle: entry.subtitle };
-      return (
-        <SliderEntry
-          key={`carousel-entry-${index}`}
-          even={(index + 1) % 2 === 0}
-          {...mappedEntry}
-        />
-      );
+  createCategoryItemsDataSource({ categories, selectedCategory }) {
+    const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2
     });
-  }
-
-  get example1() {
-    return (
-      <Carousel
-        sliderWidth={sliderWidth}
-        itemWidth={itemWidth}
-        firstItem={1}
-        inactiveSlideScale={0.94}
-        inactiveSlideOpacity={0.6}
-        enableMomentum={false}
-        containerCustomStyle={styles.slider}
-        contentContainerCustomStyle={styles.sliderContainer}
-        showsHorizontalScrollIndicator={false}
-        snapOnAndroid
-        removeClippedSubviews={false}
-      >
-        {this.getSlides()}
-      </Carousel>
-    );
+    const cat = _.find(categories, { uid: selectedCategory });
+    this.categoryItemsDataSource = ds.cloneWithRows(_.isEmpty(cat) ? {} : cat.items);
   }
 
   createCategoriesDataSource({ categories }) {
@@ -90,6 +59,34 @@ class ClinicHome extends Component {
     });
 
     this.categoriesDataSource = ds.cloneWithRows(categories);
+  }
+
+  handlePressIn() {
+    Animated.timing(this.state.pressAction, {
+      duration: 2000,
+      toValue: 1
+    }).start((() => { console.log(this.state.logOutTimeout); if (this.state.logOutTimeout === 1) { this.props.logOut(); } }));
+  }
+
+  handlePressOut() {
+    Animated.timing(this.state.pressAction, {
+      duration: this.state.logOutTimeout * 2000,
+      toValue: 0
+    }).start();
+  }
+
+  renderCategoryItemsRow(item) {
+    const mappedEntry = { ...item, illustration: item.cover.src, subtitle: item.subtitle };
+    return (
+      <TouchableOpacity
+        activeOpacity={0.7}
+        onPress={() => { Actions.itemCategory({ item }); }}
+      >
+        <SliderEntry
+          {...mappedEntry}
+        />
+      </TouchableOpacity>
+    );
   }
 
   renderCategoriesRow(item) {
@@ -107,12 +104,14 @@ class ClinicHome extends Component {
   renderLogo() {
     if (!_.isEmpty(this.props.info.logo)) {
       return (
-        <CachedImage
-          source={{
-            uri: this.props.info.logo.src
-          }}
-          style={styles.logo}
-        />
+        <TouchableWithoutFeedback onPressIn={this.handlePressIn.bind(this)} onPressOut={this.handlePressOut.bind(this)} >
+          <CachedImage
+            source={{
+              uri: this.props.info.logo.src
+            }}
+            style={styles.logo}
+          />
+        </TouchableWithoutFeedback>
       );
     }
   }
@@ -130,15 +129,15 @@ class ClinicHome extends Component {
 
           <View style={styles.headerInfo}>
 
-            <Text style={{ color: this.props.info.fontcolor, fontSize: 32, marginBottom: 40, fontFamily: 'MavenProRegular' }}>
+            <Text style={{ color: this.props.info.fontcolor, fontSize: 32, marginBottom: 40, fontFamily: 'MavenProRegular', opacity: 0.90 }}>
               {this.props.info.name}
             </Text>
 
-            <Text style={{ color: this.props.info.fontcolor, fontSize: 16, marginBottom: 8, fontFamily: 'OpenSans' }}>
+            <Text style={{ color: this.props.info.fontcolor, fontSize: 16, marginBottom: 8, fontFamily: 'OpenSans', opacity: 0.48 }}>
               {this.props.info.description}
             </Text>
 
-            <Text style={{ color: this.props.info.fontcolor, fontSize: 16, fontFamily: 'OpenSans' }}>
+            <Text style={{ color: this.props.info.fontcolor, fontSize: 16, fontFamily: 'OpenSans', opacity: 0.72 }}>
               {this.props.info.crm ? this.props.info.crm.toUpperCase() : ''}
             </Text>
 
@@ -151,7 +150,7 @@ class ClinicHome extends Component {
         </View>
 
 
-        <View style={{ flex: 2.5 }}>
+        <View style={{ flex: 1 }}>
           <View style={{ paddingLeft: 96, height: 50 }}>
             <ListView
               horizontal
@@ -161,22 +160,16 @@ class ClinicHome extends Component {
               renderRow={this.renderCategoriesRow.bind(this)}
             />
           </View>
-          <View style={{ flex: 1 }}>
-            <ScrollView
-              style={styles.scrollview}
-              indicatorStyle={'white'}
-              scrollEventThrottle={200}
-            >
-              {this.example1}
-            </ScrollView>
+          <View style={{ flex: 1, paddingLeft: 86 }}>
+            <ListView
+              horizontal
+              style={{ flex: 1 }}
+              enableEmptySections
+              dataSource={this.categoryItemsDataSource}
+              renderRow={this.renderCategoryItemsRow.bind(this)}
+            />
           </View>
         </View>
-        <View style={{ height: 50 }}>
-          <Button onPress={this.onButtonPress.bind(this)}>
-            Logout
-        </Button>
-        </View>
-
       </View>
     );
   }

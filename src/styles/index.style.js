@@ -10,11 +10,11 @@ export const colors = {
 export default StyleSheet.create({
 
     header: {
-        paddingTop: 30,
+        paddingTop: 70,
         paddingBottom: 100,
         paddingLeft: 96,
         paddingRight: 48,
-        flex: 1,
+        height: 350,
         flexDirection: 'row'
     },
     headerInfo: {
@@ -25,6 +25,16 @@ export default StyleSheet.create({
         flex: 1
     },
     logo: { width: 100, height: 100 },
+    coverContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+        position: 'relative'
+    },
+    cover: {
+        flex: 1
+    },
     inputStyle: {
         color: '#000',
         paddingRight: 5,

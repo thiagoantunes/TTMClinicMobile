@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import { View, Text } from 'react-native';
 import CachedImage from 'react-native-cached-image';
+import LinearGradient from 'react-native-linear-gradient';
 import styles from '../../styles/SliderEntry.style';
 
 export default class SliderEntry extends Component {
@@ -21,23 +21,18 @@ export default class SliderEntry extends Component {
         ) : false;
 
         return (
-            <TouchableOpacity
-                activeOpacity={0.7}
-                style={styles.slideInnerContainer}
-                onPress={() => { Actions.itemCategory({ employee: this.props }); }}
-            >
-                <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
+            <View style={styles.slideInnerContainer}>
+                <LinearGradient colors={['#4f4f4f', '#2d2d2d', '#000']} style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
                     <CachedImage
                         source={{ uri: illustration }}
                         style={styles.image}
                     />
-                    <View style={[styles.radiusMask, even ? styles.radiusMaskEven : {}]} />
-                </View>
-                <View style={[styles.textContainer, even ? styles.textContainerEven : {}]}>
-                    {uppercaseTitle}
-                    <Text style={[styles.subtitle, even ? styles.subtitleEven : {}]} numberOfLines={2}>{subtitle}</Text>
-                </View>
-            </TouchableOpacity>
+                    <View style={[styles.textContainer, even ? styles.textContainerEven : {}]}>
+                        {uppercaseTitle}
+                        <Text style={[styles.subtitle, even ? styles.subtitleEven : {}]} numberOfLines={2}>{subtitle ? subtitle.toUpperCase() : ''}</Text>
+                    </View>
+                </LinearGradient>
+            </View>
         );
     }
 }
