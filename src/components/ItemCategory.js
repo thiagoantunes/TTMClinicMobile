@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import numeral from 'numeral';
 import React, { Component } from 'react';
 import {
   Text,
@@ -105,7 +106,7 @@ class ItemCategory extends Component {
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
             {/*<Text style={{ color: 'rgba(0,0,0,0.32)', fontSize: 12, fontFamily: 'Open Sans' }}>{'5x'}</Text>*/}
-            <Text style={{ color: 'rgba(0,0,0,0.72)', fontSize: 36, fontFamily: 'Open Sans' }}>{this.props.item.price}</Text>
+            <Text style={{ color: 'rgba(0,0,0,0.72)', fontSize: 36, fontFamily: 'Open Sans' }}>{numeral(this.props.item.price).format('$0,0.00')}</Text>
           </View>
         </View>
         <View style={{ flex: 1, marginTop: 16, marginRight: 48, marginLeft: 96, borderBottomWidth: 1, borderBottomColor: 'rgba(0,0,0,0.12)' }}></View>
