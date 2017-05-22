@@ -93,19 +93,19 @@ class ItemCategory extends Component {
           {this.renderCover()}
         </View>
 
-        <View style={{ paddingLeft: 48, paddingBottom: 0, paddingTop: 32, paddingRight: 48, flexDirection: 'row', alignItems: 'flex-start' }}>
+        <View style={{ paddingBottom: 0, paddingTop: 32, paddingRight: 48, flexDirection: 'row', alignItems: 'flex-start' }}>
           <TouchableWithoutFeedback onPress={() => { Actions.pop(); }} >
-            <View style={{ marginTop: 5, marginRight: 24 }}>
+            <View style={{ paddingLeft: 48, paddingTop: 5, paddingRight: 24, height: 50 }}>
               <Image source={require('../img/back.png')} style={{ height: 24, width: 24 }} />
             </View>
           </TouchableWithoutFeedback>
           <View style={{ flex: 2 }}>
             <Text style={{ fontSize: 24, marginBottom: 4 }}>{this.props.item.title}</Text>
-            <Text style={{ fontFamily: 'OpenSans', fontSize: 12, color: 'rgba(0,0,0,0.32)' }}> {this.props.item.subTitle ? this.props.item.subTitle.toUpperCase() : ''}</Text>
+            <Text style={{ fontFamily: 'Open Sans', fontSize: 12, color: 'rgba(0,0,0,0.32)' }}> {this.props.item.subTitle ? this.props.item.subTitle.toUpperCase() : ''}</Text>
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
-            <Text style={{ color: 'rgba(0,0,0,0.32)', fontSize: 12, fontFamily: 'OpenSans' }}>{'5x'}</Text>
-            <Text style={{ color: 'rgba(0,0,0,0.72)', fontSize: 36, fontFamily: 'OpenSans' }}>{'R$240'}</Text>
+            {/*<Text style={{ color: 'rgba(0,0,0,0.32)', fontSize: 12, fontFamily: 'Open Sans' }}>{'5x'}</Text>*/}
+            <Text style={{ color: 'rgba(0,0,0,0.72)', fontSize: 36, fontFamily: 'Open Sans' }}>{this.props.item.price}</Text>
           </View>
         </View>
         <View style={{ flex: 1, marginTop: 16, marginRight: 48, marginLeft: 96, borderBottomWidth: 1, borderBottomColor: 'rgba(0,0,0,0.12)' }}></View>

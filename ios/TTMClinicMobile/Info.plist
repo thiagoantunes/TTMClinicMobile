@@ -24,6 +24,41 @@
     <string>1</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSExceptionDomains</key>
+      <dict>
+        <key>localhost</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+        </dict>
+      </dict>
+    </dict>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string/>
+    <key>NSMainNibFile</key>
+    <string>LaunchScreen</string>
+    <key>NSMainNibFile~ipad</key>
+    <string>LaunchScreen</string>
+    <key>UIAppFonts</key>
+    <array>
+      <string>MavenPro-Black.ttf</string>
+      <string>MavenPro-Bold.ttf</string>
+      <string>MavenPro-Medium.ttf</string>
+      <string>MavenPro-Regular.ttf</string>
+      <string>OpenSans-Bold.ttf</string>
+      <string>OpenSans-BoldItalic.ttf</string>
+      <string>OpenSans-ExtraBold.ttf</string>
+      <string>OpenSans-ExtraBoldItalic.ttf</string>
+      <string>OpenSans-Italic.ttf</string>
+      <string>OpenSans-Light.ttf</string>
+      <string>OpenSans-LightItalic.ttf</string>
+      <string>OpenSans-Regular.ttf</string>
+      <string>OpenSans-Semibold.ttf</string>
+      <string>OpenSans-SemiboldItalic.ttf</string>
+      <string>OpenSans-Bold.ttf</string>
+    </array>
     <key>UILaunchStoryboardName</key>
     <string>LaunchScreen</string>
     <key>UIRequiredDeviceCapabilities</key>
@@ -38,25 +73,5 @@
     </array>
     <key>UIViewControllerBasedStatusBarAppearance</key>
     <false/>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-      <key>NSExceptionDomains</key>
-      <dict>
-        <key>localhost</key>
-        <dict>
-          <key>NSExceptionAllowsInsecureHTTPLoads</key>
-          <true/>
-        </dict>
-      </dict>
-    </dict>
-    <key>UIAppFonts</key>
-    <array>
-      <string>MavenPro-Black.ttf</string>
-      <string>MavenPro-Bold.ttf</string>
-      <string>MavenPro-Medium.ttf</string>
-      <string>MavenPro-Regular.ttf</string>
-    </array>
   </dict>
 </plist>

@@ -86,7 +86,7 @@ export default StyleSheet.create({
     title: {
         color: 'white',
         fontSize: 16,
-        fontFamily: 'OpenSans',
+        fontFamily: 'Open Sans',
         fontWeight: '500',
         letterSpacing: 0.5,
     },

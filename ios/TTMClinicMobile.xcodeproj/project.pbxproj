@@ -5,13 +5,17 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
+		004C00031F9344B7AA74FE57 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C404B057B11A4ADD86FF6EE3 /* OpenSans-Light.ttf */; };
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
 		00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* TTMClinicMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TTMClinicMobileTests.m */; };
+		0C0E1FC2FCFF45D994D88E0F /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F8005470F164A58A60F3221 /* OpenSans-Italic.ttf */; };
+		0C7B81A903D14FCD9FCD8ACD /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C026ECFF52FA4C3A9EEE85FA /* libRCTVideo.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -21,6 +25,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		17F0856DE4CA4187B38953B2 /* MavenPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7E15691876C4ED9A6EB6818 /* MavenPro-Medium.ttf */; };
+		21A2D15817B74B0BA8349609 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EC75F0B146A4B71A12F45C8 /* OFL.txt */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -33,17 +39,28 @@
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* TTMClinicMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TTMClinicMobileTests.m */; };
+		338855ACC87F4EE69C25FE55 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4274AD8FC4484F51B25B2B67 /* OpenSans-Bold.ttf */; };
+		347B8197E1D045A5BA9B014C /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10DEDC8213304E24919DDF7B /* OpenSans-LightItalic.ttf */; };
+		3F5325D1F9E04593952E9659 /* MavenPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDC432375CB74F4FAA508E22 /* MavenPro-Black.ttf */; };
+		5400C8A14605475F95078EDC /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EF621C53F3D4DE8B79D7F8F /* OpenSans-SemiboldItalic.ttf */; };
+		5891433D3D3646939CA53304 /* MavenPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BBA966962DC407E8D606ED9 /* MavenPro-Regular.ttf */; };
+		5DC369B03BFE4E0AA207AF30 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1E1D47427045F689B6CB1C /* libBVLinearGradient.a */; };
+		5DE8534CD3644CA4BEA444DD /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9111B0C278BF4DF5AC329ABA /* OpenSans-ExtraBold.ttf */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
+		60EB5E66FAF44FDD9C75091C /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BEB5CB2CDE4A6CAB843475 /* libRNFetchBlob.a */; };
+		7B3C2FD635E94995B68CC9E7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADF436C3BC3C444FA404E98B /* OpenSans-Regular.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		C364DE3151B7AE8F5FD5A1C0 /* libPods-TTMClinicMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F21732FCA17BEF0AB10DEC5 /* libPods-TTMClinicMobile.a */; };
-		CBA1EED1685A48CCA80F1553 /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF64038B7BD34583978D9E31 /* libRNFetchBlob.a */; };
-		F2A7390CD7E34F259C42DE1C /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BAB9FB46564F319CD5DF16 /* libRNFirebase.a */; };
-		ACB876C4D54A4FD1B76B2563 /* MavenPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 072D77F0ED9544088D1408F6 /* MavenPro-Black.ttf */; };
-		58E0011E621141F184386B41 /* MavenPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EE3FEBD905C483AB8FA686A /* MavenPro-Bold.ttf */; };
-		E9C690D9D2064CF2AEEA59C5 /* MavenPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BA8A6F39F0D4ECDB9544992 /* MavenPro-Medium.ttf */; };
-		AB323CC8FB384C56A36F1E1C /* MavenPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A188A25C061A4EAC8DB7F454 /* MavenPro-Regular.ttf */; };
-		02763BE3669849EBB9A76EE5 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 846CC602A7DD4A079A2774BF /* libBVLinearGradient.a */; };
-		A5FD0F02F6D147EBB207CE15 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004446CA8B23463AAE25E06C /* libRCTVideo.a */; };
+		8EC57398046C4218B69E5546 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5784794DE04B3BA4DDB405 /* libRNFirebase.a */; };
+		9036548AD910494B87855A16 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA51AB342F8A4898ACAED5D7 /* OpenSans-ExtraBoldItalic.ttf */; };
+		A67619C9736849C88686E4D1 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20A14E5FB0DE455294F93648 /* OpenSans-Semibold.ttf */; };
+		AF61E5BF1ED29A700080B7B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF61E5BE1ED29A700080B7B1 /* GoogleService-Info.plist */; };
+		AF61E5C01ED29A700080B7B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF61E5BE1ED29A700080B7B1 /* GoogleService-Info.plist */; };
+		AF61E5C11ED29A700080B7B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF61E5BE1ED29A700080B7B1 /* GoogleService-Info.plist */; };
+		AF61E5C21ED29A700080B7B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF61E5BE1ED29A700080B7B1 /* GoogleService-Info.plist */; };
+		AF61E5ED1ED29E840080B7B1 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF61E5EF1ED29E840080B7B1 /* OpenSans-Bold.ttf */; };
+		CFECA33CCA574A1E9F2DF262 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA8758E7D97D4302AEA550F9 /* OpenSans-BoldItalic.ttf */; };
+		DB3F886217465782F4550C94 /* libPods-TTMClinicMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2062F23DBC402D2C918240 /* libPods-TTMClinicMobile.a */; };
+		E3DEA6A9D7FC4419BA15043A /* MavenPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAC29B9EA86348C8A2AE5370 /* MavenPro-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +253,34 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		AF4702681ED33FE6003413CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B71DD4D408D47B99649BF86 /* RCTVideo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTVideo;
+		};
+		AF61E59D1ED2999E0080B7B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9105F07126F44B3887BD0898 /* BVLinearGradient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = BVLinearGradient;
+		};
+		AF61E5B91ED2999E0080B7B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1932E05C35514F5399323ABF /* RNFetchBlob.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A15C300E1CD25C330074CB35;
+			remoteInfo = RNFetchBlob;
+		};
+		AF61E5BC1ED2999E0080B7B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13260224890E46DF8C19408B /* RNFirebase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNFirebase;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -248,6 +293,8 @@
 		00E356EE1AD99517003FC87E /* TTMClinicMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTMClinicMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TTMClinicMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTMClinicMobileTests.m; sourceTree = "<group>"; };
+		10DEDC8213304E24919DDF7B /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-LightItalic.ttf"; path = "../assets/fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		13260224890E46DF8C19408B /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* TTMClinicMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTMClinicMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,26 +305,37 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TTMClinicMobile/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TTMClinicMobile/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		1932E05C35514F5399323ABF /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFetchBlob.xcodeproj; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; };
+		1C1E1D47427045F689B6CB1C /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
+		20A14E5FB0DE455294F93648 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Semibold.ttf"; path = "../assets/fonts/OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		2BBA966962DC407E8D606ED9 /* MavenPro-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Regular.ttf"; path = "../assets/fonts/MavenPro-Regular.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* TTMClinicMobile-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TTMClinicMobile-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* TTMClinicMobile-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TTMClinicMobile-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		37299F644625F99D2667DB4F /* Pods-TTMClinicMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTMClinicMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTMClinicMobile/Pods-TTMClinicMobile.debug.xcconfig"; sourceTree = "<group>"; };
+		4274AD8FC4484F51B25B2B67 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/Base.lproj/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		4B71DD4D408D47B99649BF86 /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
-		6F21732FCA17BEF0AB10DEC5 /* libPods-TTMClinicMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTMClinicMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EC75F0B146A4B71A12F45C8 /* OFL.txt */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = OFL.txt; path = ../assets/fonts/OFL.txt; sourceTree = "<group>"; };
+		5F2062F23DBC402D2C918240 /* libPods-TTMClinicMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTMClinicMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67BEB5CB2CDE4A6CAB843475 /* libRNFetchBlob.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFetchBlob.a; sourceTree = "<group>"; };
+		6F8005470F164A58A60F3221 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Italic.ttf"; path = "../assets/fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		74D59D5E4837F11BE4F76140 /* Pods-TTMClinicMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTMClinicMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTMClinicMobile/Pods-TTMClinicMobile.release.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		8297A9B3400C49F5AE6B805B /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		A4BAB9FB46564F319CD5DF16 /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = archive.ar; name = libRNFirebase.a; path = libRNFirebase.a; sourceTree = "<group>"; };
-		BF64038B7BD34583978D9E31 /* libRNFetchBlob.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = archive.ar; name = libRNFetchBlob.a; path = libRNFetchBlob.a; sourceTree = "<group>"; };
-		FB94CB646C6D4996B41D9129 /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFetchBlob.xcodeproj; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; };
-		FC2DACE29A6BF175F7E14D66 /* Pods-TTMClinicMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTMClinicMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTMClinicMobile/Pods-TTMClinicMobile.release.xcconfig"; sourceTree = "<group>"; };
-		072D77F0ED9544088D1408F6 /* MavenPro-Black.ttf */ = {isa = PBXFileReference; name = "MavenPro-Black.ttf"; path = "../assets/fonts/MavenPro-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5EE3FEBD905C483AB8FA686A /* MavenPro-Bold.ttf */ = {isa = PBXFileReference; name = "MavenPro-Bold.ttf"; path = "../assets/fonts/MavenPro-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6BA8A6F39F0D4ECDB9544992 /* MavenPro-Medium.ttf */ = {isa = PBXFileReference; name = "MavenPro-Medium.ttf"; path = "../assets/fonts/MavenPro-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A188A25C061A4EAC8DB7F454 /* MavenPro-Regular.ttf */ = {isa = PBXFileReference; name = "MavenPro-Regular.ttf"; path = "../assets/fonts/MavenPro-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BF18708FCE4648BEB385FCF4 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; name = "BVLinearGradient.xcodeproj"; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		846CC602A7DD4A079A2774BF /* libBVLinearGradient.a */ = {isa = PBXFileReference; name = "libBVLinearGradient.a"; path = "libBVLinearGradient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		22018462A42C438096F4DF2E /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; name = "RCTVideo.xcodeproj"; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		004446CA8B23463AAE25E06C /* libRCTVideo.a */ = {isa = PBXFileReference; name = "libRCTVideo.a"; path = "libRCTVideo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		8EF621C53F3D4DE8B79D7F8F /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiboldItalic.ttf"; path = "../assets/fonts/OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		9105F07126F44B3887BD0898 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
+		9111B0C278BF4DF5AC329ABA /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBold.ttf"; path = "../assets/fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		9B5784794DE04B3BA4DDB405 /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFirebase.a; sourceTree = "<group>"; };
+		ADF436C3BC3C444FA404E98B /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		AF61E5BE1ED29A700080B7B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF61E5EE1ED29E840080B7B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		BE3EFA4C9B9E01ECAFDBBE36 /* Pods-TTMClinicMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTMClinicMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTMClinicMobile/Pods-TTMClinicMobile.debug.xcconfig"; sourceTree = "<group>"; };
+		C026ECFF52FA4C3A9EEE85FA /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTVideo.a; sourceTree = "<group>"; };
+		C404B057B11A4ADD86FF6EE3 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		CDC432375CB74F4FAA508E22 /* MavenPro-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Black.ttf"; path = "../assets/fonts/MavenPro-Black.ttf"; sourceTree = "<group>"; };
+		D7E15691876C4ED9A6EB6818 /* MavenPro-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Medium.ttf"; path = "../assets/fonts/MavenPro-Medium.ttf"; sourceTree = "<group>"; };
+		DA8758E7D97D4302AEA550F9 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-BoldItalic.ttf"; path = "../assets/fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		DAC29B9EA86348C8A2AE5370 /* MavenPro-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MavenPro-Bold.ttf"; path = "../assets/fonts/MavenPro-Bold.ttf"; sourceTree = "<group>"; };
+		EA51AB342F8A4898ACAED5D7 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../assets/fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,11 +362,11 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				CBA1EED1685A48CCA80F1553 /* libRNFetchBlob.a in Frameworks */,
-				F2A7390CD7E34F259C42DE1C /* libRNFirebase.a in Frameworks */,
-				C364DE3151B7AE8F5FD5A1C0 /* libPods-TTMClinicMobile.a in Frameworks */,
-				02763BE3669849EBB9A76EE5 /* libBVLinearGradient.a in Frameworks */,
-				A5FD0F02F6D147EBB207CE15 /* libRCTVideo.a in Frameworks */,
+				8EC57398046C4218B69E5546 /* libRNFirebase.a in Frameworks */,
+				DB3F886217465782F4550C94 /* libPods-TTMClinicMobile.a in Frameworks */,
+				5DC369B03BFE4E0AA207AF30 /* libBVLinearGradient.a in Frameworks */,
+				60EB5E66FAF44FDD9C75091C /* libRNFetchBlob.a in Frameworks */,
+				0C7B81A903D14FCD9FCD8ACD /* libRCTVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +482,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				AF61E5BE1ED29A700080B7B1 /* GoogleService-Info.plist */,
 			);
 			name = TTMClinicMobile;
 			sourceTree = "<group>";
@@ -443,13 +502,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		320460984125323D80264015 /* Pods */ = {
+		2353B69613DF44B4B6EC3E7C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				37299F644625F99D2667DB4F /* Pods-TTMClinicMobile.debug.xcconfig */,
-				FC2DACE29A6BF175F7E14D66 /* Pods-TTMClinicMobile.release.xcconfig */,
+				CDC432375CB74F4FAA508E22 /* MavenPro-Black.ttf */,
+				DAC29B9EA86348C8A2AE5370 /* MavenPro-Bold.ttf */,
+				D7E15691876C4ED9A6EB6818 /* MavenPro-Medium.ttf */,
+				2BBA966962DC407E8D606ED9 /* MavenPro-Regular.ttf */,
+				5EC75F0B146A4B71A12F45C8 /* OFL.txt */,
+				AF61E5EF1ED29E840080B7B1 /* OpenSans-Bold.ttf */,
+				DA8758E7D97D4302AEA550F9 /* OpenSans-BoldItalic.ttf */,
+				9111B0C278BF4DF5AC329ABA /* OpenSans-ExtraBold.ttf */,
+				EA51AB342F8A4898ACAED5D7 /* OpenSans-ExtraBoldItalic.ttf */,
+				6F8005470F164A58A60F3221 /* OpenSans-Italic.ttf */,
+				C404B057B11A4ADD86FF6EE3 /* OpenSans-Light.ttf */,
+				10DEDC8213304E24919DDF7B /* OpenSans-LightItalic.ttf */,
+				ADF436C3BC3C444FA404E98B /* OpenSans-Regular.ttf */,
+				20A14E5FB0DE455294F93648 /* OpenSans-Semibold.ttf */,
+				8EF621C53F3D4DE8B79D7F8F /* OpenSans-SemiboldItalic.ttf */,
+				4274AD8FC4484F51B25B2B67 /* OpenSans-Bold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2AE0FFBBBA21F78ED4F689C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE3EFA4C9B9E01ECAFDBBE36 /* Pods-TTMClinicMobile.debug.xcconfig */,
+				74D59D5E4837F11BE4F76140 /* Pods-TTMClinicMobile.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		2D04C4E5182DEBC5B013D325 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F2062F23DBC402D2C918240 /* libPods-TTMClinicMobile.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
@@ -484,10 +574,10 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				FB94CB646C6D4996B41D9129 /* RNFetchBlob.xcodeproj */,
-				8297A9B3400C49F5AE6B805B /* RNFirebase.xcodeproj */,
-				BF18708FCE4648BEB385FCF4 /* BVLinearGradient.xcodeproj */,
-				22018462A42C438096F4DF2E /* RCTVideo.xcodeproj */,
+				13260224890E46DF8C19408B /* RNFirebase.xcodeproj */,
+				9105F07126F44B3887BD0898 /* BVLinearGradient.xcodeproj */,
+				1932E05C35514F5399323ABF /* RNFetchBlob.xcodeproj */,
+				4B71DD4D408D47B99649BF86 /* RCTVideo.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -508,9 +598,9 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* TTMClinicMobileTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
-				320460984125323D80264015 /* Pods */,
-				9E42C5DD5AF70B2596409099 /* Frameworks */,
-				F60ED77498A543E4A66CAE06 /* Resources */,
+				2AE0FFBBBA21F78ED4F689C7 /* Pods */,
+				2D04C4E5182DEBC5B013D325 /* Frameworks */,
+				2353B69613DF44B4B6EC3E7C /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -527,24 +617,36 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9E42C5DD5AF70B2596409099 /* Frameworks */ = {
+		AF4702551ED33FE6003413CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6F21732FCA17BEF0AB10DEC5 /* libPods-TTMClinicMobile.a */,
+				AF4702691ED33FE6003413CF /* libRCTVideo.a */,
 			);
-			name = Frameworks;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		F60ED77498A543E4A66CAE06 /* Resources */ = {
+		AF61E5961ED2999E0080B7B1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				072D77F0ED9544088D1408F6 /* MavenPro-Black.ttf */,
-				5EE3FEBD905C483AB8FA686A /* MavenPro-Bold.ttf */,
-				6BA8A6F39F0D4ECDB9544992 /* MavenPro-Medium.ttf */,
-				A188A25C061A4EAC8DB7F454 /* MavenPro-Regular.ttf */,
+				AF61E5BA1ED2999E0080B7B1 /* libRNFetchBlob.a */,
 			);
-			name = Resources;
-			path = "";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF61E5981ED2999E0080B7B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF61E5BD1ED2999E0080B7B1 /* libRNFirebase.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF61E59A1ED2999E0080B7B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF61E59E1ED2999E0080B7B1 /* libBVLinearGradient.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -572,13 +674,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TTMClinicMobile" */;
 			buildPhases = (
-				F70985FD56924AF503CE9FE7 /* [CP] Check Pods Manifest.lock */,
+				49ADBD35EE2974970716B4D2 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				39211A8F694FCCB527D3F62D /* [CP] Embed Pods Frameworks */,
-				E26E0B668D4548F31D08FCEC /* [CP] Copy Pods Resources */,
+				5DC0B23117A99BAED05C8195 /* [CP] Embed Pods Frameworks */,
+				C3A30103BAFC5DC3BF3D47F3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -638,6 +740,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = SWGQ854ZDL;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -661,6 +766,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = AF61E59A1ED2999E0080B7B1 /* Products */;
+					ProjectRef = 9105F07126F44B3887BD0898 /* BVLinearGradient.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -698,12 +807,24 @@
 					ProjectRef = 00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */;
 				},
 				{
+					ProductGroup = AF4702551ED33FE6003413CF /* Products */;
+					ProjectRef = 4B71DD4D408D47B99649BF86 /* RCTVideo.xcodeproj */;
+				},
+				{
 					ProductGroup = 139FDEE71B06529A00C62182 /* Products */;
 					ProjectRef = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
 				},
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = AF61E5961ED2999E0080B7B1 /* Products */;
+					ProjectRef = 1932E05C35514F5399323ABF /* RNFetchBlob.xcodeproj */;
+				},
+				{
+					ProductGroup = AF61E5981ED2999E0080B7B1 /* Products */;
+					ProjectRef = 13260224890E46DF8C19408B /* RNFirebase.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -892,6 +1013,34 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		AF4702691ED33FE6003413CF /* libRCTVideo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTVideo.a;
+			remoteRef = AF4702681ED33FE6003413CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AF61E59E1ED2999E0080B7B1 /* libBVLinearGradient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBVLinearGradient.a;
+			remoteRef = AF61E59D1ED2999E0080B7B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AF61E5BA1ED2999E0080B7B1 /* libRNFetchBlob.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFetchBlob.a;
+			remoteRef = AF61E5B91ED2999E0080B7B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AF61E5BD1ED2999E0080B7B1 /* libRNFirebase.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFirebase.a;
+			remoteRef = AF61E5BC1ED2999E0080B7B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -899,6 +1048,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF61E5C01ED29A700080B7B1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,11 +1057,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				AF61E5BF1ED29A700080B7B1 /* GoogleService-Info.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				ACB876C4D54A4FD1B76B2563 /* MavenPro-Black.ttf in Resources */,
-				58E0011E621141F184386B41 /* MavenPro-Bold.ttf in Resources */,
-				E9C690D9D2064CF2AEEA59C5 /* MavenPro-Medium.ttf in Resources */,
-				AB323CC8FB384C56A36F1E1C /* MavenPro-Regular.ttf in Resources */,
+				3F5325D1F9E04593952E9659 /* MavenPro-Black.ttf in Resources */,
+				E3DEA6A9D7FC4419BA15043A /* MavenPro-Bold.ttf in Resources */,
+				17F0856DE4CA4187B38953B2 /* MavenPro-Medium.ttf in Resources */,
+				5891433D3D3646939CA53304 /* MavenPro-Regular.ttf in Resources */,
+				21A2D15817B74B0BA8349609 /* OFL.txt in Resources */,
+				AF61E5ED1ED29E840080B7B1 /* OpenSans-Bold.ttf in Resources */,
+				CFECA33CCA574A1E9F2DF262 /* OpenSans-BoldItalic.ttf in Resources */,
+				5DE8534CD3644CA4BEA444DD /* OpenSans-ExtraBold.ttf in Resources */,
+				9036548AD910494B87855A16 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				0C0E1FC2FCFF45D994D88E0F /* OpenSans-Italic.ttf in Resources */,
+				004C00031F9344B7AA74FE57 /* OpenSans-Light.ttf in Resources */,
+				347B8197E1D045A5BA9B014C /* OpenSans-LightItalic.ttf in Resources */,
+				7B3C2FD635E94995B68CC9E7 /* OpenSans-Regular.ttf in Resources */,
+				A67619C9736849C88686E4D1 /* OpenSans-Semibold.ttf in Resources */,
+				5400C8A14605475F95078EDC /* OpenSans-SemiboldItalic.ttf in Resources */,
+				338855ACC87F4EE69C25FE55 /* OpenSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,6 +1083,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+				AF61E5C11ED29A700080B7B1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,6 +1091,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF61E5C21ED29A700080B7B1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,7 +1126,22 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
-		39211A8F694FCCB527D3F62D /* [CP] Embed Pods Frameworks */ = {
+		49ADBD35EE2974970716B4D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5DC0B23117A99BAED05C8195 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -976,7 +1156,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TTMClinicMobile/Pods-TTMClinicMobile-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E26E0B668D4548F31D08FCEC /* [CP] Copy Pods Resources */ = {
+		C3A30103BAFC5DC3BF3D47F3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -989,21 +1169,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TTMClinicMobile/Pods-TTMClinicMobile-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F70985FD56924AF503CE9FE7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1068,6 +1233,15 @@
 			path = TTMClinicMobile;
 			sourceTree = "<group>";
 		};
+		AF61E5EF1ED29E840080B7B1 /* OpenSans-Bold.ttf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF61E5EE1ED29E840080B7B1 /* Base */,
+			);
+			name = "OpenSans-Bold.ttf";
+			path = ../assets/fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1081,9 +1255,9 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = TTMClinicMobileTests/Info.plist;
@@ -1112,9 +1286,9 @@
 				COPY_PHASE_STRIP = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = TTMClinicMobileTests/Info.plist;
@@ -1138,16 +1312,17 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37299F644625F99D2667DB4F /* Pods-TTMClinicMobile.debug.xcconfig */;
+			baseConfigurationReference = BE3EFA4C9B9E01ECAFDBBE36 /* Pods-TTMClinicMobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = SWGQ854ZDL;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = TTMClinicMobile/Info.plist;
@@ -1158,21 +1333,23 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = TTMClinicMobile;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC2DACE29A6BF175F7E14D66 /* Pods-TTMClinicMobile.release.xcconfig */;
+			baseConfigurationReference = 74D59D5E4837F11BE4F76140 /* Pods-TTMClinicMobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SWGQ854ZDL;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = TTMClinicMobile/Info.plist;
@@ -1183,6 +1360,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = TTMClinicMobile;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1201,9 +1379,9 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = "TTMClinicMobile-tvOS/Info.plist";
@@ -1241,9 +1419,9 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = "TTMClinicMobile-tvOS/Info.plist";

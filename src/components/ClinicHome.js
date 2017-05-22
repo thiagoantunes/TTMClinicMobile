@@ -8,7 +8,8 @@ import {
   TouchableWithoutFeedback,
   TouchableOpacity,
   StatusBar,
-  Animated
+  Animated,
+  ScrollView
 } from 'react-native';
 import CachedImage from 'react-native-cached-image';
 import { Actions } from 'react-native-router-flux';
@@ -97,7 +98,7 @@ class ClinicHome extends Component {
   renderCategoriesRow(item) {
     return (
       <TouchableWithoutFeedback onPress={this.onCategoryPress.bind(this, item)} >
-        <View style={{ paddingRight: 12 }}>
+        <View style={{ paddingRight: 20, paddingTop: 15 }}>
           <Text style={{ color: this.props.info.fontcolor, fontSize: 12, opacity: item.uid === this.props.selectedCategory ? 1 : 0.48 }}>
             {item.name ? item.name.toUpperCase() : ''}
           </Text>
@@ -146,54 +147,57 @@ class ClinicHome extends Component {
 
   render() {
     return (
+      <ScrollView 
+        style={{ backgroundColor: this.props.info.bgcolor }}
+      >
+        <View style={{ flex: 1, justifyContent: 'center' }}>
+          <StatusBar
+            translucent
+            backgroundColor={'rgba(0, 0, 0, 0.3)'}
+          />
 
-      <View style={{ backgroundColor: this.props.info.bgcolor, flex: 1, justifyContent: 'center' }}>
-        <StatusBar
-          translucent
-          backgroundColor={'rgba(0, 0, 0, 0.3)'}
-        />
+          <View style={styles.header}>
 
-        <View style={styles.header}>
+            <View style={styles.headerInfo}>
 
-          <View style={styles.headerInfo}>
+              <Text style={{ color: this.props.info.fontcolor, fontSize: 32, marginBottom: 40, fontFamily: 'MavenPro-Regular', opacity: 0.90 }}>
+                {this.props.info.name}
+              </Text>
 
-            <Text style={{ color: this.props.info.fontcolor, fontSize: 32, marginBottom: 40, fontFamily: 'MavenProRegular', opacity: 0.90 }}>
-              {this.props.info.name}
-            </Text>
+              <Text style={{ color: this.props.info.fontcolor, fontSize: 16, marginBottom: 8, fontFamily: 'Open Sans', opacity: 0.48 }}>
+                {this.props.info.description}
+              </Text>
 
-            <Text style={{ color: this.props.info.fontcolor, fontSize: 16, marginBottom: 8, fontFamily: 'OpenSans', opacity: 0.48 }}>
-              {this.props.info.description}
-            </Text>
+              <Text style={{ color: this.props.info.fontcolor, fontSize: 16, fontFamily: 'Open Sans', opacity: 0.72 }}>
+                {'CRM: '}{this.props.info.crm ? this.props.info.crm.toUpperCase() : ''}
+              </Text>
 
-            <Text style={{ color: this.props.info.fontcolor, fontSize: 16, fontFamily: 'OpenSans', opacity: 0.72 }}>
-              {'CRM: '}{ this.props.info.crm ? this.props.info.crm.toUpperCase() : ''}
-            </Text>
+            </View>
+
+            <View style={styles.headerLogo}>
+              {this.renderLogo()}
+            </View>
 
           </View>
 
-          <View style={styles.headerLogo}>
-            {this.renderLogo()}
-          </View>
 
+          <View style={{ flex: 1 }}>
+            <View style={{ paddingLeft: 96, height: 60 }}>
+              <ListView
+                horizontal
+                style={{ flex: 1 }}
+                enableEmptySections
+                dataSource={this.categoriesDataSource}
+                renderRow={this.renderCategoriesRow.bind(this)}
+              />
+            </View>
+
+            <View style={{ flex: 1, paddingLeft: 86 }}>
+              {this.renderContent()}
+            </View>
+          </View>
         </View>
-
-
-        <View style={{ flex: 1 }}>
-          <View style={{ paddingLeft: 96, height: 50 }}>
-            <ListView
-              horizontal
-              style={{ flex: 1 }}
-              enableEmptySections
-              dataSource={this.categoriesDataSource}
-              renderRow={this.renderCategoriesRow.bind(this)}
-            />
-          </View>
-
-          <View style={{ flex: 1, paddingLeft: 86 }}>
-            {this.renderContent()}
-          </View>
-        </View>
-      </View>
+      </ScrollView>
     );
   }
 }
