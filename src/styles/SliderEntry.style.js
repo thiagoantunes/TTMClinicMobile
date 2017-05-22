@@ -101,5 +101,42 @@ export default StyleSheet.create({
     },
     subtitleEven: {
         color: 'rgba(255, 255, 255, 0.7)'
-    }
+    },
+
+    bannerInnerContainer: {
+        width: wp(75) + itemHorizontalMargin * 2,
+        height: slideHeight,
+        marginLeft: 10,
+        marginRight: 2 * itemHorizontalMargin,
+        marginBottom: 18,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 6 },
+        shadowOpacity: 0.14,
+        shadowRadius: 21,
+        elevation: 10,
+        backgroundColor: 'transparent',
+        borderTopLeftRadius: entryBorderRadius,
+        borderTopRightRadius: entryBorderRadius,
+        borderBottomLeftRadius: entryBorderRadius,
+        borderBottomRightRadius: entryBorderRadius
+    },
+    bannerContainer: {
+        flex: 1,
+        backgroundColor: 'transparent',
+        borderTopLeftRadius: entryBorderRadius,
+        borderTopRightRadius: entryBorderRadius,
+
+        borderBottomLeftRadius: entryBorderRadius,
+        borderBottomRightRadius: entryBorderRadius
+    },
+    banner: {
+        ...StyleSheet.absoluteFillObject,
+        resizeMode: 'cover',
+        borderRadius: Platform.OS === 'ios' ? entryBorderRadius : 0,
+        borderTopLeftRadius: entryBorderRadius,
+        borderTopRightRadius: entryBorderRadius,
+
+        borderBottomLeftRadius: entryBorderRadius,
+        borderBottomRightRadius: entryBorderRadius
+    },
 });

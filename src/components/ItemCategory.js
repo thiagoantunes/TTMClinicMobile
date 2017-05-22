@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import CachedImage from 'react-native-cached-image';
 import HTMLView from 'react-native-htmlview';
 import { Actions } from 'react-native-router-flux';
+import VideoPlayer from 'react-native-video-controls';
 import styles from '../styles/index.style';
 
 import SliderEntry from './common/SliderEntry';
@@ -62,6 +63,17 @@ class ItemCategory extends Component {
               style={{ flex: 1, resizeMode: 'cover' }}
             />
           </View>
+        );
+      } else if (this.props.item.cover.type === 'video') {
+        return (
+          <VideoPlayer
+            source={{ uri: this.props.item.cover.src }}
+            resizeMode={'cover'}
+            navigator={this.props.navigator}
+            onBack={() => Actions.pop()}
+            style={{ height: 320 }}
+            paused
+          />
         );
       }
     }

@@ -12,10 +12,11 @@ import {
 } from 'react-native';
 import CachedImage from 'react-native-cached-image';
 import { Actions } from 'react-native-router-flux';
-import { clinicFetch, categoriesFetch, categorySelected, logOut } from '../actions';
+import { clinicFetch, categoriesFetch, categorySelected, bannersFetch, logOut } from '../actions';
 
 
 import SliderEntry from './common/SliderEntry';
+import Banner from './common/Banner';
 import styles from '../styles/index.style';
 
 class ClinicHome extends Component {
@@ -25,6 +26,7 @@ class ClinicHome extends Component {
   componentWillMount() {
     this.props.categoriesFetch();
     this.props.clinicFetch();
+    this.props.bannersFetch();
 
     this.createCategoriesDataSource(this.props);
     this.createCategoryItemsDataSource(this.props);
@@ -53,12 +55,14 @@ class ClinicHome extends Component {
     this.categoryItemsDataSource = ds.cloneWithRows(_.isEmpty(cat) ? {} : cat.items);
   }
 
-  createCategoriesDataSource({ categories }) {
+  createCategoriesDataSource({ categories, banners }) {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     });
 
-    this.categoriesDataSource = ds.cloneWithRows(categories);
+    const all = categories.concat(banners);
+
+    this.categoriesDataSource = ds.cloneWithRows(all);
   }
 
   handlePressIn() {
@@ -76,6 +80,7 @@ class ClinicHome extends Component {
   }
 
   renderCategoryItemsRow(item) {
+    console.log(item);
     const mappedEntry = { ...item, illustration: item.cover.src, subtitle: item.subtitle };
     return (
       <TouchableOpacity
@@ -93,7 +98,7 @@ class ClinicHome extends Component {
     return (
       <TouchableWithoutFeedback onPress={this.onCategoryPress.bind(this, item)} >
         <View style={{ paddingRight: 12 }}>
-          <Text style={{ color: this.props.info.fontcolor, fontSize: 12 }}>
+          <Text style={{ color: this.props.info.fontcolor, fontSize: 12, opacity: item.uid === this.props.selectedCategory ? 1 : 0.48 }}>
             {item.name ? item.name.toUpperCase() : ''}
           </Text>
         </View>
@@ -112,6 +117,29 @@ class ClinicHome extends Component {
             style={styles.logo}
           />
         </TouchableWithoutFeedback>
+      );
+    }
+  }
+
+  renderContent() {
+    const cat = _.find(this.props.categories, { uid: this.props.selectedCategory });
+    const ban = _.find(this.props.banners, { uid: this.props.selectedCategory });
+    if (!_.isEmpty(cat)) {
+      return (
+        <ListView
+          horizontal
+          style={{ flex: 1 }}
+          enableEmptySections
+          dataSource={this.categoryItemsDataSource}
+          renderRow={this.renderCategoryItemsRow.bind(this)}
+        />
+      );
+    } else if (!_.isEmpty(ban)) {
+      const mappedEntry = { ...ban, src: ban.src };
+      return (
+        <Banner
+          {...mappedEntry}
+        />
       );
     }
   }
@@ -138,7 +166,7 @@ class ClinicHome extends Component {
             </Text>
 
             <Text style={{ color: this.props.info.fontcolor, fontSize: 16, fontFamily: 'OpenSans', opacity: 0.72 }}>
-              {this.props.info.crm ? this.props.info.crm.toUpperCase() : ''}
+              {'CRM: '}{ this.props.info.crm ? this.props.info.crm.toUpperCase() : ''}
             </Text>
 
           </View>
@@ -160,14 +188,9 @@ class ClinicHome extends Component {
               renderRow={this.renderCategoriesRow.bind(this)}
             />
           </View>
+
           <View style={{ flex: 1, paddingLeft: 86 }}>
-            <ListView
-              horizontal
-              style={{ flex: 1 }}
-              enableEmptySections
-              dataSource={this.categoryItemsDataSource}
-              renderRow={this.renderCategoryItemsRow.bind(this)}
-            />
+            {this.renderContent()}
           </View>
         </View>
       </View>
@@ -187,13 +210,17 @@ const mapStateToProps = state => {
   });
   const info = state.clinic.info;
   const selectedCategory = state.clinic.selectedCategory;
+  const banners = _.map(state.clinic.banners, (val, uid) => {
+    return { ...val, uid };
+  });
 
-  return { info, categories, selectedCategory };
+  return { info, categories, selectedCategory, banners };
 };
 
 export default connect(mapStateToProps, {
   clinicFetch,
   categoriesFetch,
   categorySelected,
+  bannersFetch,
   logOut
 })(ClinicHome);

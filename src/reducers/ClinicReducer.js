@@ -1,13 +1,15 @@
 import {
   CLINIC_FETCH_SUCCESS,
   CATEGORIES_FETCH_SUCCESS,
-  CATEGORY_SELECTED
+  CATEGORY_SELECTED,
+  BANNERS_FETCH_SUCCESS
 } from '../actions/types';
 
 const INITIAL_STATE = {
   info: {},
   categories: {},
-  selectedCategory: {}
+  selectedCategory: {},
+  banners: {}
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -18,6 +20,8 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, categories: action.payload };
     case CATEGORY_SELECTED:
       return { ...state, selectedCategory: action.payload };
+    case BANNERS_FETCH_SUCCESS:
+      return { ...state, banners: action.payload };
     default:
       return state;
   }

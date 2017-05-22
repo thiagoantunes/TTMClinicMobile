@@ -1,7 +1,8 @@
 import {
   CLINIC_FETCH_SUCCESS,
   CATEGORIES_FETCH_SUCCESS,
-  CATEGORY_SELECTED
+  CATEGORY_SELECTED,
+  BANNERS_FETCH_SUCCESS
 } from './types';
 import firebase from '../firebase';
 
@@ -23,6 +24,17 @@ export const categoriesFetch = () => {
     firebase.database().ref(`/categories/${currentUser.uid}`)
       .on('value', snapshot => {
         dispatch({ type: CATEGORIES_FETCH_SUCCESS, payload: snapshot.val() });
+      });
+  };
+};
+
+export const bannersFetch = () => {
+  const { currentUser } = firebase.auth();
+
+  return (dispatch) => {
+    firebase.database().ref(`/banners/${currentUser.uid}`)
+      .on('value', snapshot => {
+        dispatch({ type: BANNERS_FETCH_SUCCESS, payload: snapshot.val() });
       });
   };
 };

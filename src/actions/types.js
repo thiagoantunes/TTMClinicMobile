@@ -8,3 +8,4 @@ export const USER_NOT_LOGGED_IN = 'user_not_logged_in';
 export const CLINIC_FETCH_SUCCESS = 'clinic_fetch_success';
 export const CATEGORIES_FETCH_SUCCESS = 'categories_fetch_success';
 export const CATEGORY_SELECTED = 'category_selected';
+export const BANNERS_FETCH_SUCCESS = 'banners_fetch_success';
