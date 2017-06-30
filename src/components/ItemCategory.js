@@ -8,21 +8,26 @@ import {
   ScrollView,
   Image,
   TouchableWithoutFeedback,
-  ListView
+  ListView,
+  StyleSheet,
+  WebView,
+  NetInfo
 } from 'react-native';
 import { connect } from 'react-redux';
 import CachedImage from 'react-native-cached-image';
 import HTMLView from 'react-native-htmlview';
 import { Actions } from 'react-native-router-flux';
-import VideoPlayer from 'react-native-video-controls';
 import styles from '../styles/index.style';
 
-import SliderEntry from './common/SliderEntry';
+import SliderEntry2 from './common/SliderEntry2';
 
 class ItemCategory extends Component {
-  state = { showModal: false };
+  state = { showModal: false, isConnected: false };
 
   componentWillMount() {
+    NetInfo.isConnected.fetch().then(isConnected => {
+      this.setState({ isConnected });
+    });
     this.createImageDataSource(this.props);
   }
 
@@ -43,10 +48,11 @@ class ItemCategory extends Component {
       ...item,
       illustration: item.src,
       subtitle: item.subtitle ? item.subtitle : '',
-      title: item.title ? item.title : ''
+      title: item.title ? item.title : '',
+      bgColor: 'black' 
     };
     return (
-      <SliderEntry
+      <SliderEntry2
         {...mappedEntry}
       />
     );
@@ -54,29 +60,24 @@ class ItemCategory extends Component {
 
   renderCover() {
     if (!_.isEmpty(this.props.item.cover)) {
-      if (this.props.item.cover.type === 'image') {
+      if (this.props.item.cover.videoId && this.state.isConnected) {
         return (
-          <View style={{ height: 350 }}>
-            <CachedImage
-              source={{
-                uri: this.props.item.cover.src,
-              }}
-              style={{ flex: 1, resizeMode: 'cover' }}
-            />
-          </View>
-        );
-      } else if (this.props.item.cover.type === 'video') {
-        return (
-          <VideoPlayer
-            source={{ uri: this.props.item.cover.src }}
-            resizeMode={'cover'}
-            navigator={this.props.navigator}
-            onBack={() => Actions.pop()}
-            style={{ height: 320 }}
-            paused
+          <WebView  
+              source={{ uri: 'https://www.youtube.com/embed/' + this.props.item.cover.videoId + '?version=3&enablejsapi=AIzaSyARcPaIYaQGAvVz317-i0wTjaoiXb4ZEp4&rel=0&autoplay=1&showinfo=0&controls=0&modestbranding=1&fs=0&autohide=1&loop=1&mute=1' }}
+              style={{ height: 300, justifyContent: 'center', alignItems: 'center', backgroundColor: 'black' }}
           />
         );
-      }
+      } 
+      return (
+        <View style={{ height: 350 }}>
+          <CachedImage
+            source={{
+              uri: this.props.item.cover.src,
+            }}
+            style={{ flex: 1, resizeMode: 'cover' }}
+          />
+        </View>
+      );
     }
   }
 
@@ -94,29 +95,29 @@ class ItemCategory extends Component {
           {this.renderCover()}
         </View>
 
-        <View style={{ paddingBottom: 0, paddingTop: 32, paddingRight: 48, flexDirection: 'row', alignItems: 'flex-start' }}>
+        <View style={styles.itemHeaderContainer}>
           <TouchableWithoutFeedback onPress={() => { Actions.pop(); }} >
-            <View style={{ paddingLeft: 48, paddingTop: 5, paddingRight: 24, height: 50 }}>
+            <View style={styles.itemCover}>
               <Image source={require('../img/back.png')} style={{ height: 24, width: 24 }} />
             </View>
           </TouchableWithoutFeedback>
           <View style={{ flex: 2 }}>
-            <Text style={{ fontSize: 24, marginBottom: 4 }}>{this.props.item.title}</Text>
-            <Text style={{ fontFamily: 'Open Sans', fontSize: 12, color: 'rgba(0,0,0,0.32)' }}> {this.props.item.subTitle ? this.props.item.subTitle.toUpperCase() : ''}</Text>
+            <Text style={styles.itemTitle}>{this.props.item.title}</Text>
+            <Text style={styles.itemSubTitle}> {this.props.item.subTitle ? this.props.item.subTitle.toUpperCase() : ''}</Text>
           </View>
-          <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
+          <View style={styles.itemPriceContainer}>
             {/*<Text style={{ color: 'rgba(0,0,0,0.32)', fontSize: 12, fontFamily: 'Open Sans' }}>{'5x'}</Text>*/}
-            <Text style={{ color: 'rgba(0,0,0,0.72)', fontSize: 36, fontFamily: 'Open Sans' }}>{numeral(this.props.item.price).format('$0,0.00')}</Text>
+            <Text style={styles.itemPrice}>{numeral(this.props.item.price).format('$0,0.00')}</Text>
           </View>
         </View>
-        <View style={{ flex: 1, marginTop: 16, marginRight: 48, marginLeft: 96, borderBottomWidth: 1, borderBottomColor: 'rgba(0,0,0,0.12)' }}></View>
-        <View style={{ paddingTop: 40, paddingRight: 48, paddingBottom: 16, paddingLeft: 96 }}>
-          <HTMLView
-            value={this.props.item.description}
-            stylesheet={styles}
+        <View style={styles.itemHeaderSeparator}></View>
+        <View style={styles.itemDescriptionContainer}>
+          <HTMLView 
+            value={this.props.item.description ? this.props.item.description : ''}
+            stylesheet={htmlStyles}
           />
         </View>
-        <View style={{ flex: 1, paddingLeft: 86, marginBottom: 40 }}>
+        <View style={styles.itemImagesContainer}>
           <ListView
             horizontal
             style={{ flex: 1 }}
@@ -129,5 +130,14 @@ class ItemCategory extends Component {
     );
   }
 }
+
+const htmlStyles = StyleSheet.create({
+  p: { 
+    fontSize: 22
+  },
+  h1: {
+    fontSize: 36,
+  }
+});
 
 export default connect(null, {})(ItemCategory);

@@ -11,8 +11,8 @@ export const clinicFetch = () => {
 
   return (dispatch) => {
     firebase.database().ref(`/clinics/${currentUser.uid}`)
-      .once('value', snapshot => {
-        dispatch({ type: CLINIC_FETCH_SUCCESS, payload: snapshot.val() });
+      .on('value', snapshot => {
+        dispatch({ type: CLINIC_FETCH_SUCCESS, payload: snapshot.val() }); 
       });
   };
 };

@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { View, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import CachedImage from 'react-native-cached-image';
-import styles from '../../styles/SliderEntry.style';
+import styles from '../../styles/SliderEntry2.style';
 
-export default class SliderEntry extends Component {
+export default class SliderEntry2 extends Component {
 
     static propTypes = {
         title: PropTypes.string.isRequired,

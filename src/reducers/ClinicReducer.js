@@ -15,6 +15,13 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CLINIC_FETCH_SUCCESS:
+      // const teste = { 
+      //   ...state,
+      //   info: {
+      //     ...state.info,
+      //     [action.payload.key]: action.payload.value
+      //   }
+      // };
       return { ...state, info: action.payload };
     case CATEGORIES_FETCH_SUCCESS:
       return { ...state, categories: action.payload };

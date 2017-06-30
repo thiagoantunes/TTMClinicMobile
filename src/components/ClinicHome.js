@@ -36,7 +36,7 @@ class ClinicHome extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (_.isEmpty(nextProps.selectedCategory) && nextProps.categories.length > 0) {
+    if ((_.isEmpty(nextProps.selectedCategory) || !_.some(nextProps.categories, { uid: nextProps.selectedCategory })) && nextProps.categories.length > 0) {
       this.props.categorySelected(nextProps.categories[0].uid);
     }
 
@@ -45,6 +45,9 @@ class ClinicHome extends Component {
   }
 
   onCategoryPress(item) {
+    if (this.itemsListView) {
+      this.itemsListView.scrollTo({ x: 0, y: 0, animated: true });
+    }
     this.props.categorySelected(item.uid);
   }
 
@@ -81,8 +84,7 @@ class ClinicHome extends Component {
   }
 
   renderCategoryItemsRow(item) {
-    console.log(item);
-    const mappedEntry = { ...item, illustration: item.cover.src, subtitle: item.subtitle };
+    const mappedEntry = { ...item, illustration: item.cover.src, subtitle: item.subtitle, bgColor: this.props.info.bgcolor ? this.props.info.bgcolor : 'black' };
     return (
       <TouchableOpacity
         activeOpacity={0.7}
@@ -99,7 +101,7 @@ class ClinicHome extends Component {
     return (
       <TouchableWithoutFeedback onPress={this.onCategoryPress.bind(this, item)} >
         <View style={{ paddingRight: 20, paddingTop: 15 }}>
-          <Text style={{ color: this.props.info.fontcolor, fontSize: 12, opacity: item.uid === this.props.selectedCategory ? 1 : 0.48 }}>
+          <Text style={{ color: this.props.info.fontcolor, fontSize: 16, opacity: item.uid === this.props.selectedCategory ? 1 : 0.48 }}>
             {item.name ? item.name.toUpperCase() : ''}
           </Text>
         </View>
@@ -128,6 +130,7 @@ class ClinicHome extends Component {
     if (!_.isEmpty(cat)) {
       return (
         <ListView
+          ref={(listview) => { this.itemsListView = listview; }}
           horizontal
           style={{ flex: 1 }}
           enableEmptySections
@@ -147,10 +150,10 @@ class ClinicHome extends Component {
 
   render() {
     return (
-      <ScrollView 
+      <ScrollView
         style={{ backgroundColor: this.props.info.bgcolor }}
       >
-        <View style={{ flex: 1, justifyContent: 'center' }}>
+        <View style={styles.headerContainer}>
           <StatusBar
             translucent
             backgroundColor={'rgba(0, 0, 0, 0.3)'}
@@ -160,15 +163,21 @@ class ClinicHome extends Component {
 
             <View style={styles.headerInfo}>
 
-              <Text style={{ color: this.props.info.fontcolor, fontSize: 32, marginBottom: 40, fontFamily: 'MavenPro-Regular', opacity: 0.90 }}>
+              <Text style={[styles.headerTitle, { color: this.props.info.fontcolor }]}>
                 {this.props.info.name}
               </Text>
 
-              <Text style={{ color: this.props.info.fontcolor, fontSize: 16, marginBottom: 8, fontFamily: 'Open Sans', opacity: 0.48 }}>
-                {this.props.info.description}
-              </Text>
+              <View style={styles.headerDescriptionContainer}>
+                <ScrollView
+                  horizontal={false}
+                >
+                  <Text style={[styles.headerDescription, { color: this.props.info.fontcolor }]}>
+                    {this.props.info.description}
+                  </Text>
+                </ScrollView>
+              </View>
 
-              <Text style={{ color: this.props.info.fontcolor, fontSize: 16, fontFamily: 'Open Sans', opacity: 0.72 }}>
+              <Text style={[styles.headerCRM, { color: this.props.info.fontcolor }]}>
                 {'CRM: '}{this.props.info.crm ? this.props.info.crm.toUpperCase() : ''}
               </Text>
 
@@ -182,7 +191,7 @@ class ClinicHome extends Component {
 
 
           <View style={{ flex: 1 }}>
-            <View style={{ paddingLeft: 96, height: 60 }}>
+            <View style={styles.homeImagesContainer}>
               <ListView
                 horizontal
                 style={{ flex: 1 }}
@@ -207,16 +216,16 @@ const mapStateToProps = state => {
     const items = _.map(val.items, (valItem, uidItem) => {
       const images = _.map(valItem.images, (valImage, uidImage) => {
         return { ...valImage, uid: uidImage };
-      });
+      }).reverse();
       return { ...valItem, uid: uidItem, images };
-    });
+    }).reverse();
     return { ...val, uid, items };
-  });
+  }).reverse();
   const info = state.clinic.info;
   const selectedCategory = state.clinic.selectedCategory;
   const banners = _.map(state.clinic.banners, (val, uid) => {
     return { ...val, uid };
-  });
+  }).reverse();
 
   return { info, categories, selectedCategory, banners };
 };

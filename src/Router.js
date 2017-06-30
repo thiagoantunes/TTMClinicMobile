@@ -42,9 +42,9 @@ class RouterComponent extends Component {
         <Scene key="auth" initial={!this.state.logged}>
           <Scene
             key="login"
-            sceneStyle={{ paddingTop: 65 }}
-            hideNavBar={false} title={'Login'}
+            hideNavBar
             component={LoginForm}
+            panHandlers={null}
           />
         </Scene>
 

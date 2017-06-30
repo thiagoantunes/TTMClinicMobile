@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import numeral from 'numeral';
+import numeralptbr from 'numeral/locales/pt-br';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
@@ -11,15 +12,6 @@ class App extends Component {
   componentWillMount() {
     numeral.zeroFormat('');
     numeral.nullFormat('');
-    numeral.register('locale', 'pt-br', {
-      delimiters: {
-        thousands: '.',
-        decimal: ','
-      },
-      currency: {
-        symbol: 'R$'
-      }
-    });
     numeral.locale('pt-br');
   }
 

@@ -1,16 +1,16 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native';
 import { colors } from './index.style';
 
-const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
+const { width: viewportWidth } = Dimensions.get('window');
 
 function wp(percentage) {
     const value = (percentage * viewportWidth) / 100;
     return Math.round(value);
 }
 
-const slideHeight = viewportHeight - 530;
-const slideWidth = wp(60);
-const itemHorizontalMargin = wp(2);
+const slideHeight = wp(40);
+const slideWidth = wp(65); 
+const itemHorizontalMargin = wp(1);
 
 export const sliderWidth = viewportWidth;
 export const itemWidth = slideWidth + itemHorizontalMargin * 2;
@@ -104,11 +104,16 @@ export default StyleSheet.create({
     },
 
     bannerInnerContainer: {
-        width: wp(100) -  (96 + itemHorizontalMargin * 2),
+        width: wp(75) + itemHorizontalMargin * 2,
         height: slideHeight,
         marginLeft: 10,
         marginRight: 2 * itemHorizontalMargin,
         marginBottom: 18,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 6 },
+        shadowOpacity: 0.14,
+        shadowRadius: 21,
+        elevation: 10,
         backgroundColor: 'transparent',
         borderTopLeftRadius: entryBorderRadius,
         borderTopRightRadius: entryBorderRadius,
@@ -117,7 +122,7 @@ export default StyleSheet.create({
     },
     bannerContainer: {
         flex: 1,
-        backgroundColor: 'transparent', 
+        backgroundColor: 'transparent',
         borderTopLeftRadius: entryBorderRadius,
         borderTopRightRadius: entryBorderRadius,
 
@@ -126,7 +131,7 @@ export default StyleSheet.create({
     },
     banner: {
         ...StyleSheet.absoluteFillObject,
-        resizeMode: 'contain',
+        resizeMode: 'cover',
         borderRadius: Platform.OS === 'ios' ? entryBorderRadius : 0,
         borderTopLeftRadius: entryBorderRadius,
         borderTopRightRadius: entryBorderRadius,

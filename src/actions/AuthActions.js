@@ -66,7 +66,7 @@ const loginUserSuccess = (dispatch, user) => {
     payload: user
   });
 
-  Actions.main();
+  Actions.main({ type: 'reset' });
 };
 
 const logUserOut = (dispatch) => {
@@ -74,5 +74,5 @@ const logUserOut = (dispatch) => {
     type: USER_NOT_LOGGED_IN
   });
 
-  Actions.auth();
+  Actions.auth({ type: 'reset' });
 };

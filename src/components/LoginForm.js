@@ -40,34 +40,36 @@ class LoginForm extends Component {
     switch (this.props.loggedIn) {
       case false:
         return (
-          <Card>
-            <CardSection>
-              <Input
-                label="Email"
-                placeholder="email@gmail.com"
-                onChangeText={this.onEmailChange.bind(this)}
-                value={this.props.email}
-              />
-            </CardSection>
+          <View style={{ paddingHorizontal: 150 }}>
+            <Card>
+              <CardSection>
+                <Input
+                  label="Email"
+                  placeholder="email@gmail.com"
+                  onChangeText={this.onEmailChange.bind(this)}
+                  value={this.props.email}
+                />
+              </CardSection>
 
-            <CardSection>
-              <Input
-                secureTextEntry
-                label="Password"
-                placeholder="password"
-                onChangeText={this.onPasswordChange.bind(this)}
-                value={this.props.password}
-              />
-            </CardSection>
+              <CardSection>
+                <Input
+                  secureTextEntry
+                  label="Password"
+                  placeholder="password"
+                  onChangeText={this.onPasswordChange.bind(this)}
+                  value={this.props.password}
+                />
+              </CardSection>
 
-            <Text style={styles.errorTextStyle}>
-              {this.props.error}
-            </Text>
+              <Text style={styles.errorTextStyle}>
+                {this.props.error}
+              </Text>
 
-            <CardSection>
-              {this.renderButton()}
-            </CardSection>
-          </Card>
+              <CardSection>
+                {this.renderButton()}
+              </CardSection>
+            </Card>
+          </View>
         );
       default:
         return <Spinner size="large" />;
@@ -76,7 +78,7 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{ flex: 1, backgroundColor: '#583B45', justifyContent: 'center' }}>
         {this.renderContent()}
       </View>
     );
