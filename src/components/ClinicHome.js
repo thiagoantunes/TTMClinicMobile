@@ -212,20 +212,20 @@ class ClinicHome extends Component {
 }
 
 const mapStateToProps = state => {
-  const categories = _.map(state.clinic.categories, (val, uid) => {
-    const items = _.map(val.items, (valItem, uidItem) => {
-      const images = _.map(valItem.images, (valImage, uidImage) => {
+  const categories = _.sortBy(_.map(state.clinic.categories, (val, uid) => {
+    const items = _.sortBy(_.map(val.items, (valItem, uidItem) => {
+      const images =  _.sortBy(_.map(valItem.images, (valImage, uidImage) => {
         return { ...valImage, uid: uidImage };
-      }).reverse();
+      }), ['uid']);
       return { ...valItem, uid: uidItem, images };
-    }).reverse();
+    }), ['uid']);
     return { ...val, uid, items };
-  }).reverse();
+  }), ['uid']);
   const info = state.clinic.info;
   const selectedCategory = state.clinic.selectedCategory;
-  const banners = _.map(state.clinic.banners, (val, uid) => {
+  const banners = _.sortBy(_.map(state.clinic.banners, (val, uid) => {
     return { ...val, uid };
-  }).reverse();
+  }), ['uid']);
 
   return { info, categories, selectedCategory, banners };
 };

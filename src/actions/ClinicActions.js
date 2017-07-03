@@ -21,7 +21,7 @@ export const categoriesFetch = () => {
   const { currentUser } = firebase.auth();
 
   return (dispatch) => {
-    firebase.database().ref(`/categories/${currentUser.uid}`)
+    firebase.database().ref(`/categories/${currentUser.uid}`).orderByKey()
       .on('value', snapshot => {
         dispatch({ type: CATEGORIES_FETCH_SUCCESS, payload: snapshot.val() });
       });
@@ -32,7 +32,7 @@ export const bannersFetch = () => {
   const { currentUser } = firebase.auth();
 
   return (dispatch) => {
-    firebase.database().ref(`/banners/${currentUser.uid}`)
+    firebase.database().ref(`/banners/${currentUser.uid}`).orderByKey()
       .on('value', snapshot => {
         dispatch({ type: BANNERS_FETCH_SUCCESS, payload: snapshot.val() });
       });

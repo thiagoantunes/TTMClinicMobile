@@ -130,8 +130,8 @@ export default StyleSheet.create({
         borderBottomColor: 'rgba(0,0,0,0.12)' 
     },
     itemDescriptionContainer: { 
-        paddingTop: 20, 
-        paddingRight: 48, 
+        paddingTop: 20,  
+        paddingRight: 48,  
         paddingBottom: 16, 
         paddingLeft: 96 
     },

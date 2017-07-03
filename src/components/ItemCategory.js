@@ -11,15 +11,23 @@ import {
   ListView,
   StyleSheet,
   WebView,
-  NetInfo
+  NetInfo,
+  Dimensions
 } from 'react-native';
 import { connect } from 'react-redux';
 import CachedImage from 'react-native-cached-image';
-import HTMLView from 'react-native-htmlview';
+import DisplayHTML from 'react-native-display-html';
 import { Actions } from 'react-native-router-flux';
 import styles from '../styles/index.style';
 
 import SliderEntry2 from './common/SliderEntry2';
+
+const { height: viewportHeight } = Dimensions.get('window');
+
+function hp(percentage) {
+    const value = (percentage * viewportHeight) / 100;
+    return Math.round(value);
+}
 
 class ItemCategory extends Component {
   state = { showModal: false, isConnected: false };
@@ -49,7 +57,7 @@ class ItemCategory extends Component {
       illustration: item.src,
       subtitle: item.subtitle ? item.subtitle : '',
       title: item.title ? item.title : '',
-      bgColor: 'black' 
+      bgColor: 'black'
     };
     return (
       <SliderEntry2
@@ -62,12 +70,12 @@ class ItemCategory extends Component {
     if (!_.isEmpty(this.props.item.cover)) {
       if (this.props.item.cover.videoId && this.state.isConnected) {
         return (
-          <WebView  
-              source={{ uri: 'https://www.youtube.com/embed/' + this.props.item.cover.videoId + '?version=3&enablejsapi=AIzaSyARcPaIYaQGAvVz317-i0wTjaoiXb4ZEp4&rel=0&autoplay=1&showinfo=0&controls=0&modestbranding=1&fs=0&autohide=1&loop=1&mute=1' }}
-              style={{ height: 300, justifyContent: 'center', alignItems: 'center', backgroundColor: 'black' }}
+          <WebView
+            source={{ uri: 'https://www.youtube.com/embed/' + this.props.item.cover.videoId + '?version=3&enablejsapi=AIzaSyARcPaIYaQGAvVz317-i0wTjaoiXb4ZEp4&rel=0&autoplay=1&showinfo=0&controls=0&modestbranding=1&fs=0&autohide=1&loop=1&mute=1' }}
+            style={{ height: 300, justifyContent: 'center', alignItems: 'center', backgroundColor: 'black' }}
           />
         );
-      } 
+      }
       return (
         <View style={{ height: 350 }}>
           <CachedImage
@@ -112,9 +120,10 @@ class ItemCategory extends Component {
         </View>
         <View style={styles.itemHeaderSeparator}></View>
         <View style={styles.itemDescriptionContainer}>
-          <HTMLView 
-            value={this.props.item.description ? this.props.item.description : ''}
-            stylesheet={htmlStyles}
+          <DisplayHTML 
+            containerStyle={{ height: viewportHeight - (hp(25) + 580) }}
+            htmlString={this.props.item.description ? this.props.item.description : ''}
+            HTMLStyles={'body { color:#666; font-size: 22; background-color: #fff } p { font-size: 22px } li { font-size: 22px } '}
           />
         </View>
         <View style={styles.itemImagesContainer}>
@@ -132,7 +141,7 @@ class ItemCategory extends Component {
 }
 
 const htmlStyles = StyleSheet.create({
-  p: { 
+  p: {
     fontSize: 22
   },
   h1: {
