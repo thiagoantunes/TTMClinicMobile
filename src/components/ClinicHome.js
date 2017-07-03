@@ -16,7 +16,7 @@ import { Actions } from 'react-native-router-flux';
 import { clinicFetch, categoriesFetch, categorySelected, bannersFetch, logOut } from '../actions';
 
 
-import SliderEntry from './common/SliderEntry';
+import SliderHome from './common/SliderHome';
 import Banner from './common/Banner';
 import styles from '../styles/index.style';
 
@@ -90,7 +90,7 @@ class ClinicHome extends Component {
         activeOpacity={0.7}
         onPress={() => { Actions.itemCategory({ item }); }}
       >
-        <SliderEntry
+        <SliderHome
           {...mappedEntry}
         />
       </TouchableOpacity>

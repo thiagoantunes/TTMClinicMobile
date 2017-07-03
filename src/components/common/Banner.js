@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { View } from 'react-native';
 import CachedImage from 'react-native-cached-image';
-import styles from '../../styles/SliderEntry.style';
+import styles from '../../styles/SliderHome.style';
 
 export default class Banner extends Component {
 

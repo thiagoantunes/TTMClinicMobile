@@ -20,7 +20,7 @@ import DisplayHTML from 'react-native-display-html';
 import { Actions } from 'react-native-router-flux';
 import styles from '../styles/index.style';
 
-import SliderEntry2 from './common/SliderEntry2';
+import SliderItemCategory from './common/SliderItemCategory';
 
 const { height: viewportHeight } = Dimensions.get('window');
 
@@ -60,7 +60,7 @@ class ItemCategory extends Component {
       bgColor: 'black'
     };
     return (
-      <SliderEntry2
+      <SliderItemCategory
         {...mappedEntry}
       />
     );
@@ -120,8 +120,8 @@ class ItemCategory extends Component {
         </View>
         <View style={styles.itemHeaderSeparator}></View>
         <View style={styles.itemDescriptionContainer}>
-          <DisplayHTML 
-            containerStyle={{ height: viewportHeight - (hp(25) + 580) }}
+          <DisplayHTML
+            containerStyle={{ height: viewportHeight - (hp(25) + 590) }}
             htmlString={this.props.item.description ? this.props.item.description : ''}
             HTMLStyles={'body { color:#666; font-size: 22; background-color: #fff } p { font-size: 22px } li { font-size: 22px } '}
           />
